@@ -1,4 +1,4 @@
-## Usefull commands
+## Useful commands
 <br/>
 $ truffle console
 <br/>
