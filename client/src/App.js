@@ -45,19 +45,25 @@ export default class App extends Component {
 
 
   
-    this.setState({ account: accounts[0],candidates:candi })
+    this.setState({ account: accounts[0],candidates:candi,instance:instance})
 
+  }
 
+  vote=(id)=>{
+      this.state.instance.methods.vote(id).send({ from: this.state.account });
   }
 
 
   render() {
-    return <div>
-              <p>Your account: {this.state.account}</p>
+    return <div style={{textAlign:'center',display:'flex',alignItems:'center',flexDirection:'column',paddingTop:40}}>
+              <div>Your account: {this.state.account}</div>
 
-              {this.state.candidates.map((v,k)=><p key={k}>{v.name}</p>)}
-
-
+              {this.state.candidates.map((v,k)=><div
+               onClick={()=>this.vote(v.id)}
+               style={{border:'1px solid grey',width:200,padding:20,borderRadius:5,marginTop:20,background:'#eeee',cursor:'pointer'}}
+               key={k}>
+                {v.name} — {v.vote}
+                </div>)}
 
     </div>;
   }
