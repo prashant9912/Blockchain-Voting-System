@@ -2,6 +2,6 @@
 <br/>
 $ truffle console
 <br/>
-    > Election.deploy().then(x=>app=x)
-    > x.address
-    > x.candidate1()
+    > Election.deploy().then(x=>app=x) <br/>
+    > x.address  <br/>
+    > x.candidate1()  <br/>
